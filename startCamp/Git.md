@@ -222,3 +222,74 @@ ex) GitLab, GitHub 등
 - 개인, 팀 프로텍트 코드를 공유
     - 개발 면접 지원 시 본인의 GitHub 주소를 공유해 어떤 프로젝트를 진행했고, 어떤 코드를 작성했는지 공유하고 평가 받기 위해 사용
 - 오픈 소스 프로젝트에 기여
+
+### 6. Git revert & reset
+
+- `git revert <commit id>` :
+    - ‘재설정’
+    - 특정 commit을 없던 일로 되돌린다는 새로운 commit 생성 →(기록에서 commit이 사라지지는 않음)
+        
+        ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2023.png)
+        
+    - 변경 사항을 안전하게 실행 취소할 수 있도록 도와주는 순방향 실행 취소 작업
+    - commit 기록에서 commit을 삭제하거나 분리하는 대신, 지정된 변경 사항을 반전시키는 새 commit을 생성
+    
+    ⇒ git에서 기록이 손실되는 것을 방지하며 기록의 무결성과 협업의 신뢰성을 높임
+    
+    - 추가 명령어
+        - 공백을 사용해 여러 commit을 한번에 실행 취소 가능
+        `git revert <commit id> <commit id> <commit id>`
+        - ‘..’을 사용해 범위를 지정
+        `git revert <commit id>..<commit id>`
+        - commit 메시지 작성을 위한 편집기를 열지 않음
+        `git revert —no-eidt <commit id>`
+        - 자동으로 commit 하지 않고, Staging Area에만 올림(이후에 직접 commit 해야함)
+        이 옵션은 여러 commit을 revert 할 때 하나의 commit으로 묶는 것이 가능
+        `git revert —no-commit <commit id>`
+- `git reset [옵션] <commit id>` :  해당 시점으로 되돌아감 → 그 시점 이후의 commit은 없던 일로
+    - 옵션
+        - 삭제되는 commit들의 기록을 어떤 영역에 남겨둘 것인지 옵션을 활용해 조정
+        - `--soft` :  이력만 삭제 → 이후 commit은 Staging Area로 이동
+            
+            ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2024.png)
+            
+            ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2025.png)
+            
+        - `--mixed` : Staging Area까지 삭제
+            
+            ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2026.png)
+            
+            ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2027.png)
+            
+        - `—hard` : Working Directory까지
+            
+            ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2028.png)
+            
+            ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2029.png)
+            
+        - `git reflog` : 이미 삭제한 commit의 이력까지 확인 가능 → 이후 `reset`으로 다시 복구
+
+### 7. Git Undoing
+
+- 파일 내용을 수정 전으로 되돌리기
+    - `git restore` : Modified 파일 상태로 되돌아가기
+    수정한 내용은 전부 사라짐
+        
+        ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2030.png)
+        
+        ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2031.png)
+        
+        ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2032.png)
+        
+        ![버젼관리된 적 없는 파일은 되돌릴 수 없다.](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2033.png)
+        
+        버젼관리된 적 없는 파일은 되돌릴 수 없다.
+        
+- Staging area에 올라간 파일을 Unstage 하기
+    - `git rm --cached` : Staging Area에서 Working Directory로 되돌리기(commit이 없는 경우!)
+        
+        ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2034.png)
+        
+    - `git restore --staged` : commit이 존재하는 경우 사용
+        
+        ![Untitled](Git%20a20671e190ba4da3879638841ef993f6/Untitled%2035.png)

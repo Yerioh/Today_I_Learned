@@ -186,8 +186,8 @@ ex) GitLab, GitHub 등
                   맨 처음 한번 사용(이미 init이 되어있음)
     - `pull` : 변경된 사항을 내려받음 
                   프로젝트 업데이트 시 사용
-- `git remote -v`  : 원격저장소 확인
-- `git remote rm <origin>` : 원격저장소 삭제
+- `git remote -v`  : 원격저장소 연동 확인
+- `git remote rm <origin>` : 원격저장소 연동 끊기
 
 ### 4. gitignore
 

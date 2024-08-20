@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* header */
+    .header {
+      width: 100%;
+      height: 120px;
+      background-color: #333;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+
+    .header>h1 {
+      text-align: center;
+      color: whitesmoke;
+    }
+
+    .category-info {
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #666;
+      color: whitesmoke;
+    }
+
+    .category-info>span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    /* main-container */
+    .container {
+      display: flex;
+      justify-content: center;
+      /* min-height: 1300px; */
+      margin: 50px 0;
+    }
+
+    .book-container {
+      box-sizing: border-box;
+      background-color: #fff;
+      width: 300px;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-container>img {
+      width: 260px;
+      height: auto;
+    }
+
+    .book-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .book-author {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .book-description {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .section-title {
+      position: sticky;
+      top: 0px;
+      background-color: #fff;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .top-button {
+      position: fixed;
+      right: 20px;
+      bottom: 100px;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .top-button a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .book-list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* footer */
+    .footer {
+      width: 100%;
+      height: 80px;
+      background-color: #333;
+      color: whitesmoke;
+      text-align: center;
+      line-height: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <h1>도서 관리 서비스에 오신 것을 환영합니다</h1>
+    <div class="category-info">
+      <span>홈</span>|<span>베스트 셀러</span>|<span>신간 도서</span>|<span>추천 도서</span>
+    </div>
+  </div>
+  <div class="container">
+  </div>
+  <div class="top-button">
+    <a href="#">TOP</a>
+  </div>
+  <div class="footer">
+    <span>ⓒ 2023 도서 관리 서비스. All rights reserved.</span>
+  </div>
+
+  <script>
+    let bookCategory = ['베스트 셀러', '신간 도서', '추천 도서']
+    let bookList = {
+      '베스트 셀러': [
+        { 'title': '베스트 셀러1', 'author': '저자 1', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+        { 'title': '베스트 셀러2', 'author': '저자 1', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+        { 'title': '베스트 셀러3', 'author': '저자 2', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+      ],
+      '신간 도서': [
+        { 'title': '신간 도서1', 'author': '저자 2', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+        { 'title': '신간 도서2', 'author': '저자 3', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+        { 'title': '신간 도서3', 'author': '저자 1', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+      ],
+      '추천 도서': [
+        { 'title': '추천 도서1', 'author': '저자 1', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+        { 'title': '추천 도서2', 'author': '저자 4', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+        { 'title': '추천 도서3', 'author': '저자 5', 'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at lacus velneque ullamcorper tempus.' },
+      ]
+    }
+    let HTMLstring = ''
+    for (let i = 0; i < bookCategory.length; i++) {
+      let category = bookCategory[i]
+      HTMLstring += `<div class="section-container">
+                      <div class="section-title">${category} 목록</div>
+                      <div class="book-list">`
+      for (let j = 0; j < bookList[category].length; j++) {
+        let book = bookList[category][j]
+        HTMLstring += `<div class="book-container">
+                          <img src="./book1.jpg" alt="book1-img">
+                          <h2 class="book-title">${book['title']}</h2>
+                          <p class="book-author">${book['author']}</p>
+                          <p class="book-description">${book['description']}</p>
+                        </div>`
+      }
+      HTMLstring += `</div>
+                    </div>`
+    }
+    let bookContainer = document.querySelector('.container')
+    bookContainer.innerHTML = HTMLstring
+    let categoryList = document.querySelectorAll('.category-info>span')
+    console.log(categoryList[0].textContent)
+    for(let i = 1; i < categoryList.length; i++){
+      categoryList[i].addEventListener('click', (e) => {
+      let getCategory = e.target.textContent
+      alert(`오늘의 ${getCategory} 는 ${bookList[getCategory][0]['title']}`)
+    })
+    }
+    
+  </script>
+</body>
+
+</html>

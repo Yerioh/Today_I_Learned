@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      main {
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+      }
+      aside {
+        flex-basis: 30%;
+      }
+      article{
+        flex-grow: 1;
+      }
+    </style>
+</head>
+
+  <body>
+  <main>
+    <aside></aside>
+    <article class="container-sm">
+      <div class="alert alert-danger" role="alert">
+        Invalid Login or password
+      </div>
+      <p class="h1 fw-bold text-center">SSAFY 전용 Gitlab 시스템</p>
+      <hr>
+      <div class="card border-dark-subtle">
+        <div class="card-header border-bottom border-primary text-center fw-bold">
+          Sign in
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label fw-bold">Username or Email</label>
+              <input type="email" class="form-control border-dark-subtle" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label fw-bold">Password</label>
+              <input type="password" class="form-control border-dark-subtle" id="exampleInputPassword1">
+            </div>
+            <div class="d-flex justify-content-between">
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input border-dark-subtle" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+              </div>
+              <div>
+                <a href="" class="link-offset-2 link-underline link-underline-opacity-0">Forgot your password?</a>
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-success" type="submit">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </article>
+    <aside></aside>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+/* font */
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+/* page */
+*{
+  margin: 0;
+  padding: 0;
+  font: 'Pretendard-Regular';
+  color: black;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container section{
+  min-height: 300px;
+  margin-bottom: 20px;
+}
+.front-page {
+  background: linear-gradient(90deg, rgba(211, 211, 211, 0.8), rgba(211, 211, 211, 0)),
+  url("https://gongu.copyright.or.kr/gongu/wrt/cmmn/wrtFileImageView.do?wrtSn=11288734&filePath=L2Rpc2sxL25ld2RhdGEvMjAxNS8wMi9DTFM2OS9OVVJJXzAwMV8wMjIwX251cmltZWRpYV8yMDE1MTIwMw==&thumbAt=Y&thumbSe=b_tbumb&wrtTy=10006");
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  padding: 30px;
+}
+@media all and (max-width: 991px) {
+  .front-page{
+    background-color: rgba(211, 211, 211, 0.8);
+    background-image: none;
+    height: 300px;
+  }
+}
+.front-page>.h1, .h3 {
+  color: #333;
+}
+.profile-img {
+  width: 350px;
+  height: auto;
+  background-color: whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+}
+.info-content h6, h5 {
+  font-style: italic;
+}
+.icon {
+  width: 50px;
+  height: auto;
+}
+.link {
+  color: lightskyblue;
+  text-decoration: none;
+}
+.card-body {
+  min-height: 150px;
+}

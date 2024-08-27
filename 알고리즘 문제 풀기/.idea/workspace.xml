@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f050be6d-4aa7-4753-bf3c-1f0a4493a93a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/0807/stack_ws2.py" beforeDir="false" afterPath="$PROJECT_DIR$/0807/stack_ws2.py" afterDir="false" />
-    </list>
+    <list default="true" id="f050be6d-4aa7-4753-bf3c-1f0a4493a93a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="f050be6d-4aa7-4753-bf3c-1f0a4493a93a" name="Default Changelist" comment="" />

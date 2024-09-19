@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  nav>a {
+      text-decoration : none;
+      color : skyblue;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href={% url "articles:index" %}>홈</a>
+    <a href={% url "articles:dinner" %}>저녁메뉴</a>
+    <a href={% url "articles:login" %}>로그인</a>
+  </nav>
+  {% block content%}
+  {% endblock content%}
+</body>
+</html>

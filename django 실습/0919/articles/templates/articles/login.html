@@ -1,0 +1,11 @@
+<!-- articles.login.html -->
+{% extends "articles/base.html" %}
+{% block content %}
+  <form action="http://localhost:8000/index" method="get">
+    <label for="user-id">USER_ID : </label>
+    <input type="text" name="user-id" id="user-id"><br>
+    <label for="user-pw">PASSWORD : </label>
+    <input type="password" name="user-pw" id="user-pw"><br>
+    <input type="submit" value="로그인">
+  </form>
+{% endblock content %}

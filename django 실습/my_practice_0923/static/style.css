@@ -1,0 +1,48 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px 10px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.article{
+  width: 90%;
+  max-width: 500px;
+  
+}
+.article-idx{
+  width: 15%;
+}
+.article-title{
+  width: 58%;
+}
+.article-created-at{
+  width: 27%;
+  font-size: 14px;
+}
+
+a{
+  color:black;
+  text-decoration: none;
+}
+
+.create-article{
+  width: 80%;
+}
+.create-article>table{
+  width: 100%;
+}
+.article-input{
+  width: 100%;
+  height: 40px;
+  border: none;
+}
+.create-article textarea{
+  height: 300px;
+  border: none;
+}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>detail-{{ article.pk }}</h1>
+  <p>{{ article.title }}</p>
+  <p>{{ article.content }}</p>
+  <div class="btn-area">
+    <button><a href="{% url "articles:index" %}">목록으로</a></button>
+    <form action="{% url "articles:delete" %}">
+      <input type="hidden" name='id' value="{{ article.pk }}">
+      <input type="submit" value="삭제하기">
+    </form>
+  </div>
+{% endblock content %}

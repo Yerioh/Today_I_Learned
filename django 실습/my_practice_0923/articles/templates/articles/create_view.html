@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="{% url "articles:create_article" %}" class="create-article">
+  <table>
+    <tr>
+      <td><input type="text" name="title" id="" class="article-input"></td>
+    </tr>
+    <tr>
+      <td><textarea name="content" id="" class="article-input"></textarea></td>
+    </tr>
+  </table>
+  
+  <br>
+  
+  <br>
+  <input type="submit" value="작성하기">
+</form>
+{% endblock content %}

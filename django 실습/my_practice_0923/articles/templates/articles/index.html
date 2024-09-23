@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Article</h1>
+  <table class="articles">
+    <thead>
+      <tr>
+        <th class="article-idx">글 번호</th>
+        <th class="article-title">글 제목</th>
+        <th class="article-created-at">작성일</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for article in articles %}
+      <tr>
+        <td class="article-idx">{{ article.pk }}</td>
+        <td class="article-title"><a href="{% url "articles:detail" article.pk %}">{{ article.title }}</a></td>
+        <td class="article-created-at">{{ article.created_at }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <div class="bnt-area">
+    <button><a href="{% url "articles:create" %}">글 작성하기</a></button>
+  </div>
+{% endblock content %}

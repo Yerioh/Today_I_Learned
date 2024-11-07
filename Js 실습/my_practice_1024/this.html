@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // this 결과 예상해보기
+
+    // 1.
+    function showThis () {
+      return this
+    }
+    console.log(showThis())  // Window
+
+    // 2.
+    const person = {
+      name: '홍길동',
+      greet () {
+        console.log(this.name)
+      }
+    }
+    person.greet() // 홍길동
+
+    // 3.
+    const dog = {
+      sound: '멍멍',
+      bark: function () {
+        console.log(this.sound)
+      }
+    }
+    const barkFunction = dog.bark
+    barkFunction()  // undefined
+    // 할당되어 호출되면서 일반 함수처럼 실행되었기 때문에 this는 window가 된다.
+
+    // 4.
+    const car = {
+      brand: '현대',
+      showBrand: () => {
+        console.log(this.brand)
+      }
+    }
+    car.showBrand() // undefined
+    // 화살표 함수는 this를 가지지 않기 때문에 상속 받는 것을 전달한다.
+
+    // 5.
+    const timer = {
+      seconds: 0,
+      // start: function () {
+      //   setInterval(function () {
+      //     this.seconds += 1
+      //     console.log(this.seconds)
+      //   }, 1000)
+      // }  // this => window : 일반 함수로 실행되었기 때문에
+      start: function () {
+        setInterval(() => {
+          this.seconds += 1
+          console.log(this.seconds)
+        }, 1000)
+      }
+    } // 화살표 함수는 this를 상속받기 때문에 timer를 가리키게 된다.
+    timer.start() 
+  </script>
+</body>
+</html>

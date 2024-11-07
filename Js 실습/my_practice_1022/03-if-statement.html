@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const name = prompt('이름을 입력해주세요.')
+    let message
+    if (name === 'admin') {
+      message = '관리자님 환영해요'
+    } else if (name === 'customer') {
+      message = '고객님 환영해요'
+    } else {
+      message = `반갑습니다. ${name}님`
+    }
+    console.log(message)
+    alert(message)
+  </script>
+</body>
+
+</html>

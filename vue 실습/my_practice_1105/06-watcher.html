@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 1 -->
+    <button @click="count++">Add 1</button>
+    <p>Count: {{ count }}</p>
+
+    <!-- 2 -->
+    <input v-model="message">
+    <p>Message length: {{ messageLength }}</p>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref, watch } = Vue
+
+    const app = createApp({
+      setup() {
+        const count = ref(0)
+        const message = ref('')
+        const messageLength = ref(0)
+        
+        // source => 감시하는 대상, callback(newValue, oldValue(optional))
+        // 비동기 작업 수행 및 외부 API와의 연동에 주로 사용됨
+        watch(count, (newValue, oldValue) => {
+          console.log(`newValue: ${newValue}, oldValue: ${oldValue}`)
+        })
+
+        watch(message, (newValue) => {
+          messageLength.value = message.value.length
+        })
+
+        // 배열을 사용하면 여러 대상을 감시할 수 있음
+
+        return {
+          count,
+          message,
+          messageLength
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
